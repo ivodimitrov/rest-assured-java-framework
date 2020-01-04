@@ -1,4 +1,6 @@
-# REST Assured Java Framework and basic tests
+# REST Assured Java Framework and API tests
+
+Testing and validating REST services with [REST Assured](http://rest-assured.io/)
 
 ## What do I need to run these samples?
 A Java 8 (or greater, in this case I'm using 11) JDK and Maven. That's it.
