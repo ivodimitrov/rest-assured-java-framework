@@ -1,4 +1,4 @@
-# REST Assured Java Framework and API tests
+# REST Assured Java Practice and API tests
 
 Testing and validating REST services with [REST Assured](http://rest-assured.io/)
 
