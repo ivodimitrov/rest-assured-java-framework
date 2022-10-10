@@ -1,13 +1,11 @@
 package examples;
 
-import com.tngtech.java.junit.dataprovider.DataProvider;
-import com.tngtech.java.junit.dataprovider.DataProviderRunner;
-import com.tngtech.java.junit.dataprovider.UseDataProvider;
+import com.tngtech.java.junit.dataprovider.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 @RunWith(DataProviderRunner.class)
 public class dataDrivenTests {
@@ -17,7 +15,9 @@ public class dataDrivenTests {
         return new Object[][]{
                 {"us", "90210", "Beverly Hills"},
                 {"us", "12345", "Schenectady"},
-                {"ca", "B2R", "Waverley"}
+                {"ca", "B2R", "Waverley"},
+                {"bg", "1000", "София / Sofija"},
+                {"bg", "5800", "Плевен / Pleven"}
         };
     }
 
