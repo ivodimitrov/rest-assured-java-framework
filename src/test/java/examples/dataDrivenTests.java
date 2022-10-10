@@ -15,9 +15,7 @@ public class dataDrivenTests {
         return new Object[][]{
                 {"us", "90210", "Beverly Hills"},
                 {"us", "12345", "Schenectady"},
-                {"ca", "B2R", "Waverley"},
-                {"bg", "1000", "София / Sofija"},
-                {"bg", "5800", "Плевен / Pleven"}
+                {"ca", "B2R", "Waverley"}
         };
     }
 
