@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 @RunWith(DataProviderRunner.class)
-public class dataDrivenTests {
+public class DataDrivenTests {
 
     @DataProvider
     public static Object[][] zipCodesAndPlaces() {

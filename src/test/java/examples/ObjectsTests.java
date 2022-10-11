@@ -10,7 +10,7 @@ import org.junit.Test;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
 import static io.restassured.RestAssured.given;
 
-public class objectsTests {
+public class ObjectsTests {
 
     @Rule
     public WireMockRule wireMockRule = new WireMockRule(options().port(9876));

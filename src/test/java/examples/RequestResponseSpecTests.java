@@ -12,7 +12,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class requestResponseSpecTests {
+public class RequestResponseSpecTests {
 
     private static RequestSpecification requestSpec;
     private static ResponseSpecification responseSpec;
