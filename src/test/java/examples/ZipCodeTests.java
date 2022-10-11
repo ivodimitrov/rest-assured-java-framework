@@ -6,7 +6,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class zipCodeTests {
+public class ZipCodeTests {
 
     @Test
     public void requestUsZipCode90210_checkStatusCode_expectHttp200() {

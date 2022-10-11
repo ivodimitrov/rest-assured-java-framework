@@ -1,16 +1,14 @@
 package examples;
 
-import com.tngtech.java.junit.dataprovider.DataProvider;
-import com.tngtech.java.junit.dataprovider.DataProviderRunner;
-import com.tngtech.java.junit.dataprovider.UseDataProvider;
+import com.tngtech.java.junit.dataprovider.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 @RunWith(DataProviderRunner.class)
-public class dataDrivenTests {
+public class DataDrivenTests {
 
     @DataProvider
     public static Object[][] zipCodesAndPlaces() {
