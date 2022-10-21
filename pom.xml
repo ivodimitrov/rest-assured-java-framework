@@ -16,18 +16,21 @@
         <restassured.version>5.2.0</restassured.version>
         <junit.version>4.13.2</junit.version>
         <junit.dataprovider.version>2.9</junit.dataprovider.version>
-        <jackson.databind.version>2.13.4</jackson.databind.version>
+        <junit-jupiter.version>5.9.0</junit-jupiter.version>
+        <testng.version>7.6.1</testng.version>
+        <approvaltests.version>18.5.0</approvaltests.version>
+        <jackson.databind.version>2.13.4.2</jackson.databind.version>
         <json.version>20220924</json.version>
         <wiremock.version>2.34.0</wiremock.version>
         <slf4j.version>2.0.3</slf4j.version>
         <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${restassured.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -42,22 +45,35 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.approvaltests</groupId>
+            <artifactId>approvaltests</artifactId>
+            <version>${approvaltests.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.databind.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>${json.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock-jre8</artifactId>
             <version>${wiremock.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -65,29 +81,8 @@
             <version>${slf4j.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.2.0</version>
-            <type>maven-plugin</type>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.14.3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.approvaltests</groupId>
-            <artifactId>approvaltests</artifactId>
-            <version>18.4.0</version>
-        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -111,16 +106,4 @@
             </plugin>
         </plugins>
     </build>
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <configLocation>google_checks.xml</configLocation>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
 </project>

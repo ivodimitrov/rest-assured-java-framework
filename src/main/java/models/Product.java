@@ -6,28 +6,28 @@ public class Product {
     private String name;
     private String description;
     private double price;
-    private int category_id;
-    private String category_name;
+    private int categoryId;
+    private String categoryName;
 
     public Product() {
     }
 
     //Used for POST requests
-    public Product(String name, String description, double price, int category_id) {
+    public Product(String name, String description, double price, int categoryId) {
         setName(name);
         setDescription(description);
         setPrice(price);
-        setCategory_id(category_id);
+        setCategoryId(categoryId);
     }
 
     //Used for GET requests
-    public Product(int id, String name, String description, double price, int category_id, String category_name) {
+    public Product(int id, String name, String description, double price, int categoryId, String categoryName) {
         setId(id);
         setName(name);
         setDescription(description);
         setPrice(price);
-        setCategory_id(category_id);
-        setCategory_name(category_name);
+        setCategoryId(categoryId);
+        setCategoryName(categoryName);
     }
 
     public int getId() {
@@ -62,19 +62,19 @@ public class Product {
         this.price = price;
     }
 
-    public int getCategory_id() {
-        return category_id;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public String getCategory_name() {
-        return category_name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 }

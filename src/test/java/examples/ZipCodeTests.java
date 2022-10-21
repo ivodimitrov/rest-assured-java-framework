@@ -84,26 +84,4 @@ public class ZipCodeTests {
                 assertThat().
                 body("places.'place name'", hasSize(1));
     }
-
-    @Test
-    public void requestUsZipCode12345_checkPlaceNameInResponseBody_expectSchenectady() {
-
-        given().
-                when().
-                get("http://zippopotam.us/us/12345").
-                then().
-                assertThat().
-                body("places[0].'place name'", equalTo("Schenectady"));
-    }
-
-    @Test
-    public void requestCaZipCodeB2R_checkPlaceNameInResponseBody_expectWaverley() {
-
-        given().
-                when().
-                get("http://zippopotam.us/ca/B2R").
-                then().
-                assertThat().
-                body("places[0].'place name'", equalTo("Waverley"));
-    }
 }
