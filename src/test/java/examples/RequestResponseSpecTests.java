@@ -34,10 +34,12 @@ public class RequestResponseSpecTests {
     public void requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills_withRequestSpec() {
 
         given().
+                log().all().
                 spec(requestSpec).
                 when().
                 get("us/90210").
                 then().
+                log().body().
                 assertThat().
                 statusCode(200);
     }
@@ -48,7 +50,7 @@ public class RequestResponseSpecTests {
         given().
                 spec(requestSpec).
                 when().
-                get("http://zippopotam.us/us/90210").
+                get("us/90210").
                 then().
                 spec(responseSpec).
                 and().
@@ -60,11 +62,10 @@ public class RequestResponseSpecTests {
     public void requestUsZipCode90210_extractPlaceNameFromResponseBody_assertEqualToBeverlyHills() {
 
         String placeName =
-
                 given().
                         spec(requestSpec).
                         when().
-                        get("http://zippopotam.us/us/90210").
+                        get("us/90210").
                         then().
                         extract().
                         path("places[0].'place name'");

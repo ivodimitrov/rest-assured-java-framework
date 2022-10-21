@@ -1,8 +1,7 @@
-package apis;
+package models;
 
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
-import static io.restassured.RestAssured.given;
 
 public class ZipCodeApi {
 
@@ -24,7 +23,7 @@ public class ZipCodeApi {
     }
 
     public Response get() {
-        response = given().get(ENDPOINT + zipCode);
+        response = RestAssured.given().get(ENDPOINT + zipCode);
         return response;
     }
 

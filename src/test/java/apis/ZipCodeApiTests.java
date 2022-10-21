@@ -1,5 +1,6 @@
 package apis;
 
+import models.ZipCodeApi;
 import org.approvaltests.Approvals;
 import org.testng.annotations.Test;
 
