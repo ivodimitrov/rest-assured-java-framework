@@ -20,6 +20,8 @@
         <testng.version>7.6.1</testng.version>
         <approvaltests.version>18.5.0</approvaltests.version>
         <jackson.databind.version>2.13.4.2</jackson.databind.version>
+        <jackson.core.version>2.13.4</jackson.core.version>
+        <jackson.datatype.version>2.13.4</jackson.datatype.version>
         <json.version>20220924</json.version>
         <wiremock.version>2.34.0</wiremock.version>
         <slf4j.version>2.0.3</slf4j.version>
@@ -64,6 +66,16 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.databind.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.datatype.version}</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
