@@ -1,29 +1,14 @@
 package com.example.payloads;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.time.LocalDate;
 
+@AllArgsConstructor
+@Getter
 public class BookingDates {
 
-    @JsonProperty
     private LocalDate checkin;
-    @JsonProperty
     private LocalDate checkout;
-
-    public BookingDates() {
-    }
-
-    public BookingDates(LocalDate checkin, LocalDate checkout) {
-        this.checkin = checkin;
-        this.checkout = checkout;
-    }
-
-    public LocalDate getCheckin() {
-        return checkin;
-    }
-
-    public LocalDate getCheckout() {
-        return checkout;
-    }
 }
