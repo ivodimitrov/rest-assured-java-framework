@@ -17,7 +17,7 @@
         <junit.version>4.13.2</junit.version>
         <junit.dataprovider.version>2.9</junit.dataprovider.version>
         <junit-jupiter.version>5.9.0</junit-jupiter.version>
-        <testng.version>7.6.1</testng.version>
+        <testng.version>7.7.0</testng.version>
         <approvaltests.version>18.5.0</approvaltests.version>
         <jackson.databind.version>2.13.4.2</jackson.databind.version>
         <jackson.core.version>2.13.4</jackson.core.version>
