@@ -22,7 +22,7 @@
         <jackson.databind.version>2.13.4.2</jackson.databind.version>
         <jackson.core.version>2.13.4</jackson.core.version>
         <jackson.datatype.version>2.13.4</jackson.datatype.version>
-        <json.version>20220924</json.version>
+        <json.version>20231013</json.version>
         <wiremock.version>2.34.0</wiremock.version>
         <slf4j.version>2.0.3</slf4j.version>
         <javafaker.version>1.0.2</javafaker.version>
