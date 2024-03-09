@@ -8,11 +8,9 @@ import com.example.requests.AuthApi;
 import com.example.requests.BookingApi;
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
+import java.util.Map;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.time.LocalDate;
-import java.util.Map;
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -24,8 +22,10 @@ public class BookingApiIT {
     @BeforeMethod
     public Response createBooking() {
         BookingDates dates = new BookingDates(
-                LocalDate.of(2021, 1, 1),
-                LocalDate.of(2021, 1, 3)
+                //                LocalDate.of(2021, 1, 1),
+                //                LocalDate.of(2021, 1, 3)
+                "2021-01-01",
+                "2021-01-03"
         );
 
         Booking payload = new Booking(
@@ -54,6 +54,11 @@ public class BookingApiIT {
         Response response = BookingApi.getBookingSummary(roomId);
 
         assertEquals(200, response.getStatusCode());
+
+        BookingResponse bookingResponse = BookingApi.getBookingSummary1(roomId);
+        assertEquals(200, bookingResponse.getStatusCode());
+        assertEquals("2021-01-01", bookingResponse.getBookings().get(0)
+                .getBookingDates().getCheckin());
     }
 
     @Test
