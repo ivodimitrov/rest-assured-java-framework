@@ -13,17 +13,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <restassured.version>5.2.0</restassured.version>
+        <restassured.version>5.4.0</restassured.version>
         <junit.version>4.13.2</junit.version>
         <junit.dataprovider.version>2.9</junit.dataprovider.version>
-        <junit-jupiter.version>5.9.0</junit-jupiter.version>
-        <testng.version>7.7.0</testng.version>
+        <junit-jupiter.version>5.10.2</junit-jupiter.version>
+        <testng.version>7.9.0</testng.version>
         <approvaltests.version>18.5.0</approvaltests.version>
-        <jackson.databind.version>2.13.4.2</jackson.databind.version>
-        <jackson.core.version>2.13.4</jackson.core.version>
-        <jackson.datatype.version>2.13.4</jackson.datatype.version>
+        <jackson.databind.version>2.16.1</jackson.databind.version>
+        <jackson.annotations.version>2.16.1</jackson.annotations.version>
+        <jackson.core.version>2.16.1</jackson.core.version>
+        <jackson.datatype.version>2.16.1</jackson.datatype.version>
         <json.version>20231013</json.version>
-        <wiremock.version>2.35.1</wiremock.version>
+        <wiremock.version>3.3.1</wiremock.version>
         <slf4j.version>2.0.3</slf4j.version>
         <javafaker.version>1.0.2</javafaker.version>
         <lombok.version>1.18.24</lombok.version>
@@ -71,6 +72,11 @@
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>${jackson.core.version}</version>
         </dependency>
@@ -85,8 +91,8 @@
             <version>${json.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.github.tomakehurst</groupId>
-            <artifactId>wiremock-jre8</artifactId>
+            <groupId>org.wiremock</groupId>
+            <artifactId>wiremock</artifactId>
             <version>${wiremock.version}</version>
         </dependency>
         <dependency>
