@@ -39,7 +39,7 @@ public class RequestResponseSpecTests {
                 when().
                 get("us/90210").
                 then().
-                log().body().
+                log().all().
                 assertThat().
                 statusCode(200);
     }
@@ -48,10 +48,12 @@ public class RequestResponseSpecTests {
     public void requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills_withResponseSpec() {
 
         given().
+                log().all().
                 spec(requestSpec).
                 when().
                 get("us/90210").
                 then().
+                log().all().
                 spec(responseSpec).
                 and().
                 assertThat().
@@ -63,10 +65,12 @@ public class RequestResponseSpecTests {
 
         String placeName =
                 given().
+                        log().all().
                         spec(requestSpec).
                         when().
                         get("us/90210").
                         then().
+                        log().all().
                         extract().
                         path("places[0].'place name'");
 
