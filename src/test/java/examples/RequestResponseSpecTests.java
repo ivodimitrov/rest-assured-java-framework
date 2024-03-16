@@ -2,6 +2,9 @@ package examples;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.LogDetail;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -10,6 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.Matchers.equalTo;
 
 public class RequestResponseSpecTests {
@@ -20,40 +24,39 @@ public class RequestResponseSpecTests {
     @BeforeClass
     public static void createRequestResponseSpecification() {
 
-        requestSpec = new RequestSpecBuilder().
-                setBaseUri("http://api.zippopotam.us").
-                build();
+        requestSpec = new RequestSpecBuilder()
+                .setBaseUri("http://api.zippopotam.us")
+                .setContentType(ContentType.JSON)
+                .addFilter(new RequestLoggingFilter(LogDetail.ALL))
+                .addFilter(new ResponseLoggingFilter(LogDetail.ALL))
+                .build();
 
-        responseSpec = new ResponseSpecBuilder().
-                expectStatusCode(200).
-                expectContentType(ContentType.JSON).
-                build();
+        responseSpec = new ResponseSpecBuilder()
+                .expectStatusCode(SC_OK)
+                .expectContentType(ContentType.JSON)
+                .build();
     }
 
     @Test
     public void requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills_withRequestSpec() {
 
         given().
-                log().all().
                 spec(requestSpec).
                 when().
                 get("us/90210").
                 then().
-                log().all().
                 assertThat().
-                statusCode(200);
+                statusCode(SC_OK);
     }
 
     @Test
     public void requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills_withResponseSpec() {
 
         given().
-                log().all().
                 spec(requestSpec).
                 when().
                 get("us/90210").
                 then().
-                log().all().
                 spec(responseSpec).
                 and().
                 assertThat().
@@ -65,12 +68,10 @@ public class RequestResponseSpecTests {
 
         String placeName =
                 given().
-                        log().all().
                         spec(requestSpec).
                         when().
                         get("us/90210").
                         then().
-                        log().all().
                         extract().
                         path("places[0].'place name'");
 
