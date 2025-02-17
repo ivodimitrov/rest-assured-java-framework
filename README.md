@@ -7,3 +7,7 @@ Testing and validating REST services with [REST Assured](http://rest-assured.io/
 A Java 8 or greater (In this case I'm using Java 17) JDK and Maven. That's it.
 
 ## What API is used for the samples?
+
+## Setting the Environment at Runtime
+
+`mvn test -Denv=qa`
